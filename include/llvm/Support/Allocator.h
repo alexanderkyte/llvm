@@ -31,6 +31,11 @@
 #include <cstddef>
 #include <cstdlib>
 
+
+// Workaround for issue with our version of llvm, fixed in llvm HEAD
+// https://github.com/rust-lang/rust/issues/22316
+#define offsetof __builtin_offsetof
+
 namespace llvm {
 
 /// \brief CRTP base class providing obvious overloads for the core \c
